@@ -6,7 +6,7 @@
 #include <linux/module.h>
 #include <linux/export.h>
 #include <linux/notifier.h>
-#include "touchpanel_event_notify.h"
+#include <soc/oplus/touchpanel_event_notify.h>
 
 static BLOCKING_NOTIFIER_HEAD(touchpanel_notifier_list);
 
