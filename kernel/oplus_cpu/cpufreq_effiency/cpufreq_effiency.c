@@ -1,4 +1,4 @@
-#include <linux/cpufreq_effiency.h>
+#include "cpufreq_effiency.h"
 
 /* debug_mode, @1: enable debug log output, @0: disable debug log output. */
 static int debug_mode = 0;

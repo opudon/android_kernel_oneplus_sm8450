@@ -30,7 +30,7 @@
 #include <linux/cpufreq_bouncing.h>
 #endif
 #if IS_ENABLED(CONFIG_OPLUS_FEATURE_OCH)
-#include <linux/cpufreq_health.h>
+#include "../../kernel/oplus_cpu/cpufreq_health/cpufreq_health.h"
 #endif
 
 #define CREATE_TRACE_POINTS
