@@ -20,7 +20,7 @@
 #include <linux/mm.h>
 #include <linux/sched/task.h>
 #endif /* CONFIG_OPLUS_OOM_REAPER_OPT */
-#include <../../cpu/sched/sched_assist/sa_common.h>
+#include <../../kernel/oplus_cpu/sched/sched_assist/sa_common.h>
 
 static int g_direct_swappiness = 60;
 static int g_swappiness = 160;

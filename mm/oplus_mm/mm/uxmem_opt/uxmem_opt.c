@@ -39,8 +39,8 @@
 #include <linux/delay.h>
 #include "../../mm/internal.h"
 
-#include <../../cpu/sched/sched_assist/sa_common.h>
-#include <../../cpu/sched/sched_info/osi_healthinfo.h>
+#include <../../kernel/oplus_cpu/sched/sched_assist/sa_common.h>
+#include <../../kernel/oplus_cpu/cpu/sched/sched_info/osi_healthinfo.h>
 #include "uxmem_opt.h"
 #define UX_PAGE_POOL_NAME "ux_page_pool_fillthread"
 #define MAX_UXMEM_POOL_ALLOC_RETRIES (5)

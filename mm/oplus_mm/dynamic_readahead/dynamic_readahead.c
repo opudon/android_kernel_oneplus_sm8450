@@ -38,8 +38,8 @@
 #include <linux/sched/rt.h>
 #include "../../mm/internal.h"
 
-#include <../../cpu/sched/sched_assist/sa_common.h>
-#include <../../cpu/sched/sched_info/osi_healthinfo.h>
+#include <../../kernel/oplus_cpu/sched/sched_assist/sa_common.h>
+#include <../../kernel/oplus_cpu/sched/sched_info/osi_healthinfo.h>
 
 
 static unsigned long long high_wm = 0;

@@ -2713,8 +2713,8 @@ static void shrink_lruvec(struct lruvec *lruvec, struct scan_control *sc)
 	enum lru_list lru;
 	unsigned long nr_reclaimed = 0;
 	unsigned long nr_to_reclaim = sc->nr_to_reclaim;
-	bool proportional_reclaim;
 	struct blk_plug plug;
+	bool scan_adjusted;
 
 
 #if defined(CONFIG_CONT_PTE_HUGEPAGE) && CONFIG_POOL_ASYNC_RECLAIM
