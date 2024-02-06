@@ -189,6 +189,28 @@ static int tp_framework_mode_open(struct inode *inode, struct file *file)
 
 DECLARE_PROC_OPS(tp_framework_mode_proc_fops, tp_framework_mode_open, seq_read, NULL, single_release);
 
+/*proc/touchpanel/kernel_cost*/
+static int tp_kernel_cost_read_func(struct seq_file *s, void *v)
+{
+	struct syna_tcm *tcm = s->private;
+
+	if (!tcm) {
+		return 0;
+	}
+
+	seq_printf(s, "%d\n", tcm->irq_cost_time);
+
+	return 0;
+}
+
+static int tp_kernel_cost_open(struct inode *inode, struct file *file)
+{
+	return single_open(file, tp_kernel_cost_read_func, PDE_DATA(inode));
+}
+
+DECLARE_PROC_OPS(tp_kernel_cost_proc_fops, tp_kernel_cost_open, seq_read, NULL, single_release);
+
+
 /*coordinate - For black screen gesture coordinate*/
 static ssize_t proc_coordinate_read(struct file *file, char __user *buffer,
 				    size_t count, loff_t *ppos)
@@ -668,6 +690,9 @@ int init_touchpanel_proc(struct syna_tcm *tcm,
 		},
 		{
 			"framework_mode", 0666, NULL, &tp_framework_mode_proc_fops, tcm, false, true
+		},
+		{
+			"kernel_cost", 0666, NULL, &tp_kernel_cost_proc_fops, tcm, false, true
 		},
 		{
 			"coordinate", 0666, NULL, &proc_coordinate_fops, tcm, false, true

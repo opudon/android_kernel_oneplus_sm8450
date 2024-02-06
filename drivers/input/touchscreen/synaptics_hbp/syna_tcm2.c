@@ -910,8 +910,11 @@ static irqreturn_t syna_dev_isr(int irq, void *data)
 {
 	int retval;
 	unsigned char code = 0;
+	ktime_t irq_cost_timer;
 	struct syna_tcm *tcm = data;
 	struct syna_hw_attn_data *attn = &tcm->hw_if->bdata_attn;
+
+	irq_cost_timer = ktime_get();
 
 	if (unlikely(gpio_get_value(attn->irq_gpio) != attn->irq_on_state))
 		goto exit;
@@ -974,6 +977,7 @@ static irqreturn_t syna_dev_isr(int irq, void *data)
 	}
 
 exit:
+	tcm->irq_cost_time = ktime_to_us(ktime_get()) - ktime_to_us(irq_cost_timer);
 	return IRQ_HANDLED;
 }
 

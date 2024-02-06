@@ -565,6 +565,7 @@ struct syna_tcm {
 	/* ISR-related variables */
 	pid_t isr_pid;
 	bool irq_wake;
+	int irq_cost_time;
 
 	/* cdev and sysfs nodes creation */
 	struct cdev char_dev;
