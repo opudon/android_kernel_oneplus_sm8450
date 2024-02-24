@@ -290,7 +290,7 @@ int syna_dev_enable_lowpwr_gesture(struct syna_tcm *tcm, bool en)
  * @return
  *    on success, 0; otherwise, negative value on error.
  */
-static int syna_dev_set_gesture_type(struct syna_tcm *tcm, unsigned short value)
+int syna_dev_set_gesture_type(struct syna_tcm *tcm, unsigned short value)
 {
 	int retval = 0;
 
